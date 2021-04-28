@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #ff8474;
+  color: #fd7361;
 }
 
 .App-link {
@@ -57,4 +57,13 @@ h3 {
   font-style: italic;
   font-weight: lighter;
   color: #fff;
+}
+
+p {
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: lighter;
+  font-family: monospace;
+  text-align: left;
+  color: #3b86a8;
 }
