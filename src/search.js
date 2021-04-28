@@ -1,24 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
-
-export default function search(props){
-
-    function showTemp(response){
-        alert(` It is ${Math.round(response.data.main.temp)}ºC in ${response.data.name}`);
-    }
-
-    let apiKey = "5fc1e7ef8b2560b54bb5e53c834819ac";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemp);
-    
-    return(
-        <h2>
-            Hello 🖖🏼
-        </h2>
-    )
-
-/* export default function search() {
+ export default function Search() {
   let [city, setCity] = useState("");
   let [weather, setWeather] = useState("");
   let [loaded, setLoaded] = useState(false);
@@ -66,6 +50,17 @@ export default function search(props){
       </div>
     );
   } else {
-    return form;
-  }*/
+    return (
+      <div>
+        {form}
+        <br></br>
+        <br></br>
+        <h2>
+          "Dear Weather, 
+        </h2>
+        
+        <h3>Stop showind off. We get it, you're hot"</h3>
+      </div>
+      );
+  }
 }
