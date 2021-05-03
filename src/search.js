@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import "./App.css";
 
  export default function Search() {
@@ -31,7 +32,7 @@ import "./App.css";
   let form = (
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Enter a city" onChange={updateCity} />
-      <input type="submit" value="Search" />
+      <input type="submit" class="form-control" value="Search" />
     </form>
   );
   if (loaded) {
