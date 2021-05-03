@@ -38,7 +38,6 @@
 }
 
 .row {
-  text-align-last: center;
   margin: 10px 25px;
 }
 
@@ -62,7 +61,7 @@ h1 {
 
 li {
   list-style-type: none;
-  text-align: center;
+  text-align: left;
   text-transform: capitalize;
   color: #f1eaea;
   font-size: 20px;

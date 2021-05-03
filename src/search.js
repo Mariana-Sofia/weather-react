@@ -36,16 +36,19 @@ import "./App.css";
   let form = (
     <form onSubmit={handleSubmit}>
         <div className="col-10">
-          <input type="search" placeholder="Enter a city" className="form-control" onChange={updateCity} />
+          <input type="search" placeholder="Enter a city" className="form-control" autoFocus="on" onChange={updateCity} />
           </div>
       <div className="row">
         <div className="col-3"></div>
+
         <div className="col-3">
           <input type="submit" className="btn btn-info" value="Current Position" />
         </div>
+
         <div className="col-3">
           <input type="submit" className="btn btn-info" value="Search" />
         </div>
+
         <div className="col-3"></div>
       </div>
 
@@ -55,12 +58,14 @@ import "./App.css";
     return (
       <div>
         {form}
+        
         <div className="row">
           <div className="col-6">
             <img src={weather.icon} alt={weather.description} />
            <h3 className="temp">{Math.round(weather.temperature)}<small> ºC / ºF</small></h3>
            <h3 className="description">{weather.description}</h3>
           </div>
+
           <div className="col-6">
             <ul>
               <li>Feels : {Math.round(weather.feels_like)}ºC</li>
@@ -69,7 +74,8 @@ import "./App.css";
               <li>Humidity : {weather.humidity}%</li>
               <li>Wind : {Math.round(weather.wind)}Km/h</li>
             </ul>
-            </div>
+          </div>
+
         </div>
       </div>
     );
