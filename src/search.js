@@ -13,8 +13,12 @@ import "./App.css";
   }
 
   function showTemp(response) {
+    console.log(response.data)
     setLoaded(true);
     setWeather({
+      max:response.data.main.temp_max,
+      min:response.data.main.temp_min,
+      feels_like: response.data.main.feels_like,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -31,23 +35,42 @@ import "./App.css";
   }
   let form = (
     <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter a city" onChange={updateCity} />
-      <input type="submit" class="form-control" value="Search" />
+        <div className="col-10">
+          <input type="search" placeholder="Enter a city" className="form-control" onChange={updateCity} />
+          </div>
+      <div className="row">
+        <div className="col-3"></div>
+        <div className="col-3">
+          <input type="submit" className="btn btn-info" value="Current Position" />
+        </div>
+        <div className="col-3">
+          <input type="submit" className="btn btn-info" value="Search" />
+        </div>
+        <div className="col-3"></div>
+      </div>
+
     </form>
   );
   if (loaded) {
     return (
       <div>
         {form}
-        <ul>
-          <li>Temperature : {Math.round(weather.temperature)}ºC</li>
-          <li>Description : {weather.description}</li>
-          <li>Humidity : {weather.humidity}%</li>
-          <li>Wind : {Math.round(weather.wind)}Km/h</li>
-          <li>
+        <div className="row">
+          <div className="col-6">
             <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
+           <h3 className="temp">{Math.round(weather.temperature)}<small> ºC / ºF</small></h3>
+           <h3 className="description">{weather.description}</h3>
+          </div>
+          <div className="col-6">
+            <ul>
+              <li>Feels : {Math.round(weather.feels_like)}ºC</li>
+              <li>Max : {Math.round(weather.max)}ºC</li>
+              <li>Min : {Math.round(weather.min)}ºC</li>
+              <li>Humidity : {weather.humidity}%</li>
+              <li>Wind : {Math.round(weather.wind)}Km/h</li>
+            </ul>
+            </div>
+        </div>
       </div>
     );
   } else {
@@ -56,11 +79,11 @@ import "./App.css";
         {form}
         <br></br>
         <br></br>
-        <h2>
+        <h2 className="sentence">
           "Dear Weather, 
         </h2>
         
-        <h3>Stop showind off. We get it, you're hot"</h3>
+        <h3 className="sentence">Stop showind off. We get it, you're hot"</h3>
       </div>
       );
   }

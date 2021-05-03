@@ -1,56 +1,83 @@
 .App {
   text-align: center;
   background-image: url(./background.jpg);
-  background-repeat: no-repeat;
   background-size: cover;
-}
-
-.App-header {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #fd7361;
+}
+
+.container {
+  width: 600px;
+  height: 500px;
+  background-color: #9eb9f4;
+  margin: 0 auto;
+  border: 2px solid #d6c0b600;
+  border-radius: 30px 2px;
+  margin-top: 25%;
+}
+
+.temp,
+.description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.description {
+  text-transform: capitalize;
+}
+
+.sentence {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #ede0d7;
+  font-family: "Montserrat", sans-serif;
+}
+
+.row {
+  text-align-last: center;
+  margin: 10px 25px;
+}
+
+.col-10,
+.col-3 {
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.col-6 {
+  align-self: baseline;
+}
+
+h1 {
+  font-family: "Bilbo Swash Caps", cursive;
+  font-size: 100px;
+  font-weight: lighter;
+  margin: 40px 20px 10px 20px;
+  color: #dde4e7;
 }
 
 li {
   list-style-type: none;
   text-align: center;
   text-transform: capitalize;
-  color: #3b86a8;
-  font-weight: lighter;
-}
-
-.container {
-  width: 600px;
-  height: 500px;
-  background-color: #d6c0b6;
-  margin: 0 auto;
-  border: 2px solid #d6c0b600;
-  border-radius: 30px 2px;
-}
-
-h1 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 70px;
-}
-
-h2,
-h3 {
+  color: #f1eaea;
   font-size: 20px;
-  font-style: italic;
-  font-weight: lighter;
-  color: #fff;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  text-align: center;
 }
 
 p {
   margin: 0 auto;
-  font-size: 12px;
-  font-weight: lighter;
-  font-family: monospace;
-  text-align: left;
-  color: #3b86a8;
+  font-size: 15px;
+  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
 }
