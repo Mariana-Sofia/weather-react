@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Forecast from "./forecast";
 
 import "./App.css";
 
@@ -77,8 +78,9 @@ import "./App.css";
             </ul>
           </div>
 
+        
         </div>
-
+        <Forecast/>
       </div>
     );
   } else {
