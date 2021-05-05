@@ -9,7 +9,7 @@
 
 .container {
   width: 600px;
-  height: 500px;
+  height: 530px;
   background-color: #9eb9f4;
   margin: 0 auto;
   border: 2px solid #d6c0b600;
@@ -33,7 +33,7 @@
   font-size: 20px;
   font-style: italic;
   font-weight: lighter;
-  color: #ede0d7;
+  color: #fde0cc;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -43,7 +43,6 @@
 
 .col-10,
 .col-3 {
-  padding: 0px;
   margin: 0 auto;
 }
 
@@ -51,12 +50,29 @@
   align-self: baseline;
 }
 
+.sentence{
+  margin: 0 auto;
+  margin-top: 100px;
+
+}
+input:placeholder-shown {
+  font-style: normal;
+  font-family: "Montserrat";
+}
+
+.btn{
+font-size: 15px;
+color: #9eb9f4;
+background-color: #ffffff;
+border: 1px solid #9eb9f4;
+}
+
 h1 {
   font-family: "Bilbo Swash Caps", cursive;
   font-size: 100px;
   font-weight: lighter;
-  margin: 40px 20px 10px 20px;
-  color: #dde4e7;
+  margin: 40px 20px 0px 20px;
+  color: #e7f8ff;
 }
 
 li {

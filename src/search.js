@@ -36,7 +36,7 @@ import "./App.css";
   let form = (
     <form onSubmit={handleSubmit}>
         <div className="col-10">
-          <input type="search" placeholder="Enter a city" className="form-control" autoFocus="on" onChange={updateCity} />
+          <input type="search" placeholder="Enter a city"  className="form-control" autoFocus="on" onChange={updateCity} />
           </div>
       <div className="row">
         <div className="col-3"></div>
@@ -57,6 +57,7 @@ import "./App.css";
   if (loaded) {
     return (
       <div>
+
         {form}
         
         <div className="row">
@@ -77,19 +78,22 @@ import "./App.css";
           </div>
 
         </div>
+
       </div>
     );
   } else {
     return (
       <div>
         {form}
-        <br></br>
-        <br></br>
-        <h2 className="sentence">
+        <div className="sentence">
+        <h2>
           "Dear Weather, 
         </h2>
         
-        <h3 className="sentence">Stop showind off. We get it, you're hot"</h3>
+        <h3>
+          Stop showind off. We get it, you're hot"
+          </h3>
+        </div>
       </div>
       );
   }
