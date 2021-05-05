@@ -33,8 +33,10 @@
   font-size: 20px;
   font-style: italic;
   font-weight: lighter;
-  color: #fde0cc;
+  color: #ffdfc2;
   font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+  margin-top: 16%;
 }
 
 .row {
@@ -50,11 +52,7 @@
   align-self: baseline;
 }
 
-.sentence{
-  margin: 0 auto;
-  margin-top: 100px;
 
-}
 input:placeholder-shown {
   font-style: normal;
   font-family: "Montserrat";
