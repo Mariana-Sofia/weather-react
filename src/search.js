@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Forecast from "./forecast";
+import WeatherInfo from "./WeatherInfo";
 
 import "./App.css";
 
@@ -23,7 +24,7 @@ import "./App.css";
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed
     });
   }
@@ -58,30 +59,14 @@ import "./App.css";
   if (loaded) {
     return (
       <div>
-
         {form}
         
-        <div className="row">
-          <div className="col-6">
-            <img src={weather.icon} alt={weather.description} />
-           <h3 className="temp">{Math.round(weather.temperature)}<small> ºC / ºF</small></h3>
-           <h3 className="description">{weather.description}</h3>
-          </div>
-
-          <div className="col-6">
-            <ul>
-              <li>Feels : {Math.round(weather.feels_like)}ºC</li>
-              <li>Max : {Math.round(weather.max)}ºC</li>
-              <li>Min : {Math.round(weather.min)}ºC</li>
-              <li>Humidity : {weather.humidity}%</li>
-              <li>Wind : {Math.round(weather.wind)}Km/h</li>
-            </ul>
-          </div>
-
+        <WeatherInfo data={weather}/>
         
-        </div>
+        
+        
         <Forecast/>
-      </div>
+        </div>
     );
   } else {
     return (
