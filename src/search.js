@@ -60,11 +60,7 @@ import "./App.css";
     return (
       <div>
         {form}
-        
         <WeatherInfo data={weather}/>
-        
-        
-        
         <Forecast/>
         </div>
     );
