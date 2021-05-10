@@ -2301,6 +2301,11 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+animated-weather-icon@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/animated-weather-icon/-/animated-weather-icon-1.0.6.tgz#cea903bba7c4c43ab9a5b63d9d1df3dcdabb03bf"
+  integrity sha512-us08pnJJyUNMd/g+rFPr5TNBJfvuLk1mdmkYnxaRuh2wdTKjORQDywiWtRySmzrRNm3UncIeVtrQJcK4jLztLg==
+
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
@@ -9081,6 +9086,11 @@ raw-body@2.4.0:
     http-errors "1.7.2"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-animated-weather@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-animated-weather/-/react-animated-weather-4.0.1.tgz#a9832b84e3a0bb626cd536999a371a1cc5f337e8"
+  integrity sha512-ipEa3yW3rld1UAHAmm7Bltn5BOH3O2B491R0ws51kwFtqQ6fc5KWUiBQ0e4sO/XjoeqCkAN/Y98lWx1qZMR84g==
 
 react-app-polyfill@^2.0.0:
   version "2.0.0"

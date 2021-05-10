@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Forecast from "./forecast";
+import WeatherInfo from "./WeatherInfo";
 
 import "./App.css";
 
@@ -13,7 +15,8 @@ import "./App.css";
   }
 
   function showTemp(response) {
-    console.log(response.data)
+    console.log(response.data);
+
     setLoaded(true);
     setWeather({
       max:response.data.main.temp_max,
@@ -22,27 +25,44 @@ import "./App.css";
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      wind: response.data.wind.speed
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      name:response.data.name
     });
   }
 
-  function handleSubmit(event) {
+  
+function myCity(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchMyCity);
+}
+
+  function searchMyCity(position){
+    console.log(position);
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "5fc1e7ef8b2560b54bb5e53c834819ac";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemp);
+  }
+
+    function handleSubmit(event) {
     event.preventDefault();
     let apiKey = "5fc1e7ef8b2560b54bb5e53c834819ac";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemp);
   }
+
   let form = (
     <form onSubmit={handleSubmit}>
         <div className="col-10">
-          <input type="search" placeholder="Enter a city" className="form-control" autoFocus="on" onChange={updateCity} />
+          <input type="search" placeholder="Enter a city"  className="form-control" autoFocus="on" onChange={updateCity} />
           </div>
       <div className="row">
         <div className="col-3"></div>
 
         <div className="col-3">
-          <input type="submit" className="btn btn-info" value="Current Position" />
+          <input type="submit" className="btn btn-info" value="Current Location" onClick={myCity} />
         </div>
 
         <div className="col-3">
@@ -58,38 +78,23 @@ import "./App.css";
     return (
       <div>
         {form}
-        
-        <div className="row">
-          <div className="col-6">
-            <img src={weather.icon} alt={weather.description} />
-           <h3 className="temp">{Math.round(weather.temperature)}<small> ºC / ºF</small></h3>
-           <h3 className="description">{weather.description}</h3>
-          </div>
-
-          <div className="col-6">
-            <ul>
-              <li>Feels : {Math.round(weather.feels_like)}ºC</li>
-              <li>Max : {Math.round(weather.max)}ºC</li>
-              <li>Min : {Math.round(weather.min)}ºC</li>
-              <li>Humidity : {weather.humidity}%</li>
-              <li>Wind : {Math.round(weather.wind)}Km/h</li>
-            </ul>
-          </div>
-
+        <WeatherInfo data={weather}/>
+        <Forecast/>
         </div>
-      </div>
     );
   } else {
     return (
       <div>
         {form}
-        <br></br>
-        <br></br>
-        <h2 className="sentence">
+        <div className="sentence">
+        <h2>
           "Dear Weather, 
         </h2>
         
-        <h3 className="sentence">Stop showind off. We get it, you're hot"</h3>
+        <h3>
+          Stop showind off. We get it, you're hot"
+          </h3>
+        </div>
       </div>
       );
   }

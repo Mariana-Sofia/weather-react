@@ -1,0 +1,20 @@
+.forecast {
+  text-align: center;
+}
+
+.forecast-date {
+  color: #e9ceaf;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.forecast-max {
+  color: #e9ceaf;
+  margin-right: 5px;
+  font-weight: 500;
+}
+
+.forecast-min {
+  color: #e9ceaf;
+  font-weight: 300;
+}
