@@ -59,9 +59,10 @@ input:placeholder-shown {
 
 .btn {
   font-size: 15px;
-  color: #9eb9f4;
+  color: #138496;
   background-color: #ffffff;
   border: 1px solid #ffffff;
+  width: max-content;
 }
 
 h1 {

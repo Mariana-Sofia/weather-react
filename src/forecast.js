@@ -4,25 +4,17 @@ import WeatherIcon from "./weatherIcon"
 import "./forecast.css"
 import axios from "axios";
 
-export default function Forecast(){
+export default function Forecast(props){
 
     function handleResponse(response){
         console.log(response.data)
-    }
-
-   function myCity(event) {
-        event.preventDefault();
-        navigator.geolocation.getCurrentPosition(searchMyCity);
-    }
-
-    function searchMyCity(position){
-        console.log(position);
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
+    };
         let apiKey=`5fc1e7ef8b2560b54bb5e53c834819ac`
-        let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`
+        let latitude = props.coordinates.lat;
+        let longitude = props.coordinates.lon;
+        let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
         axios.get(apiUrl).then(handleResponse);
-    }
+    
     
    
     return(
