@@ -2,14 +2,28 @@ import React from "react";
 import WeatherIcon from "./weatherIcon"
 
 import "./forecast.css"
+import axios from "axios";
 
 export default function Forecast(){
 
+    function handleResponse(response){
+        console.log(response.data)
+    }
 
-    //let lon= position.coords.longitude;
-    //let lat= position.coords.latitude;
-    //let apiKey=`5fc1e7ef8b2560b54bb5e53c834819ac`
-    //let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
+   function myCity(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(searchMyCity);
+    }
+
+    function searchMyCity(position){
+        console.log(position);
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let apiKey=`5fc1e7ef8b2560b54bb5e53c834819ac`
+        let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`
+        axios.get(apiUrl).then(handleResponse);
+    }
+    
    
     return(
         <div className="forecast">
