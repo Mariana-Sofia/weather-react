@@ -1,6 +1,6 @@
 import Search from "./search";
 import Date from"./date";
-
+import "./App.css"
 
 function App() {
   return (
