@@ -16,7 +16,7 @@ export default function Forecast(props){
         axios.get(apiUrl).then(handleResponse);
     
     
-   
+    
     return(
         <div className="forecast">
           <div className="row">
